@@ -13,14 +13,26 @@ class App extends React.Component {
     super();
 
     this.state = {
-      activeTab: "Add",
+      activeTab: "add",
       items: [],
     };
   }
 
-  handleButtonClick = (event) => {
+  selectAdd = () => {
     this.setState({
-      activeTab: event.target.innerText,
+      activeTab: "add",
+    });
+  };
+
+  selectList = () => {
+    this.setState({
+      activeTab: "list",
+    });
+  };
+
+  selectPay = () => {
+    this.setState({
+      activeTab: "pay",
     });
   };
 
@@ -30,20 +42,20 @@ class App extends React.Component {
       <>
         <h1>Bakery</h1>
         <Button
-          isSelected={this.state.activeTab === "Add"}
-          handleClick={this.handleButtonClick}
+          isSelected={this.state.activeTab === "add"}
+          handleClick={this.selectAdd}
         >
           Add
         </Button>
         <Button
-          isSelected={this.state.activeTab === "List"}
-          handleClick={this.handleButtonClick}
+          isSelected={this.state.activeTab === "list"}
+          handleClick={this.selectList}
         >
           List
         </Button>
         <Button
-          isSelected={this.state.activeTab === "Pay"}
-          handleClick={this.handleButtonClick}
+          isSelected={this.state.activeTab === "pay"}
+          handleClick={this.selectPay}
         >
           Pay
         </Button>
