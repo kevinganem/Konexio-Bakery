@@ -13,7 +13,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      activeTab: "add",
+      activeTab: "Add",
       items: [],
     };
   }
@@ -42,19 +42,19 @@ class App extends React.Component {
       <>
         <h1>Bakery</h1>
         <Button
-          isSelected={this.state.activeTab === "add"}
+          isSelected={this.state.activeTab === "Add"}
           handleClick={this.selectAdd}
         >
           Add
         </Button>
         <Button
-          isSelected={this.state.activeTab === "list"}
+          isSelected={this.state.activeTab === "List"}
           handleClick={this.selectList}
         >
           List
         </Button>
         <Button
-          isSelected={this.state.activeTab === "pay"}
+          isSelected={this.state.activeTab === "Pay"}
           handleClick={this.selectPay}
         >
           Pay
