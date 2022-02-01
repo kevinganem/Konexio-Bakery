@@ -24,6 +24,7 @@ class App extends React.Component {
     this.addItem = this.addItem.bind(this);
   }
 
+  // SELECT TABS (selectAdd - selectList - selectPay)
   selectAdd = () => {
     this.setState({
       activeTab: "Add",
@@ -42,12 +43,14 @@ class App extends React.Component {
     });
   };
 
+  // PUSHING ITEMS
   addItem = (name, price) => {
     this.state.items.push({ name: name, price: price });
 
     console.log(this.state.items);
   };
 
+  // WHICH TAB ARE WE ?
   renderTab() {
     if (this.state.activeTab === "Add") {
       return (
