@@ -58,6 +58,7 @@ class Add extends React.Component {
             className="form-range"
             min="1"
             max="10"
+            defaultValue={1}
             onChange={this.updatePrice}
           />
         </form>

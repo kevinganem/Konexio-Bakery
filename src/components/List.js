@@ -17,6 +17,12 @@ class List extends React.Component {
               </li>
             ))}
           </ul>
+          <button
+            className="btn btn-danger mt-2"
+            // onClick=
+          >
+            Delete
+          </button>
         </div>
       </>
     );

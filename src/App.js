@@ -50,7 +50,7 @@ class App extends React.Component {
     console.log(this.state.items);
   };
 
-  // WHICH TAB ARE WE ?
+  // WHICH TAB ARE WE ON ?
   renderTab() {
     if (this.state.activeTab === "Add") {
       return (
@@ -71,10 +71,20 @@ class App extends React.Component {
         );
       return (
         <>
-          <List items={this.state.items} />
+          <List
+            items={this.state.items.sort(
+              (a, b) => parseFloat(a.price) - parseFloat(b.price)
+            )}
+          />
         </>
       );
     } else if (this.state.activeTab === "Pay") {
+      if (!this.state.items[0])
+        return (
+          <>
+            <h1>No items available</h1>
+          </>
+        );
       return (
         <>
           <Pay />
@@ -87,7 +97,7 @@ class App extends React.Component {
     console.log(this.state.activeTab);
     return (
       <>
-        <div className="container-fluid col-9">
+        <div className="container-fluid col-7">
           <h1 className="text-center">Bakery</h1>
           <Button
             isSelected={this.state.activeTab === "Add"}
