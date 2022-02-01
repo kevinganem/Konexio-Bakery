@@ -1,13 +1,26 @@
 // REACT
-// import React from 'react'
+import React from "react";
 
-// class List extends React.Component {
+class List extends React.Component {
+  render() {
+    return (
+      <>
+        {/* MAPPING LIST USING BOOTSTRAP LIST GROUP WITH BADGES */}
+        <div className="">
+          <ul className="list-group">
+            {this.props.items.map((item) => (
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                {item.name}
+                <span className="badge bg-primary rounded-pill">
+                  {item.price} €
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </>
+    );
+  }
+}
 
-//     render () {
-//         return (
-
-//         )
-//     }
-// }
-
-// export default List;
+export default List;

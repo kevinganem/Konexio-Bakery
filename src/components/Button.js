@@ -11,7 +11,7 @@ class Button extends React.Component {
           onClick={this.props.handleClick}
           className={`btn btn${
             this.props.isSelected ? "" : "-outline"
-          }-primary m-2`}
+          }-primary mt-2 mb-2`}
         >
           {/* USING CHILDREN NAME (Add - List - Pay) */}
 

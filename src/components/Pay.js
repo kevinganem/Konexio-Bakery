@@ -3,7 +3,7 @@
 
 // class Pay extends React.Component {
 
-//     render () {
+//     render() {
 //         return (
 
 //         )
