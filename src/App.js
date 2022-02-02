@@ -22,6 +22,7 @@ class App extends React.Component {
     this.selectList = this.selectList.bind(this);
     this.selectPay = this.selectPay.bind(this);
     this.addItem = this.addItem.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   // SELECT TABS (selectAdd - selectList - selectPay)
@@ -48,6 +49,12 @@ class App extends React.Component {
     this.state.items.push({ name: name, price: price });
 
     console.log(this.state.items);
+  };
+
+  handleClick = (event) => {
+    this.setState({
+      activeTab: event.target.innerText,
+    });
   };
 
   // WHICH TAB ARE WE ON ?
@@ -87,7 +94,7 @@ class App extends React.Component {
         );
       return (
         <>
-          <Pay />
+          <Pay items={this.state.items} />
         </>
       );
     }

@@ -44,7 +44,6 @@ class Add extends React.Component {
             <button
               className="btn btn-primary"
               type="button"
-              id="button-addon2"
               onClick={() =>
                 this.props.onClick(this.state.productName, this.state.price)
               }
